@@ -14,7 +14,7 @@ display: block
 }
 </style>
 </head> 
-<body>
+<body style="background-color:#f5f3f2; ">
 <h1 align="center">Customs Application For Refund Of Duty</h1>
 <%= link_to 'Home', root_path %>
 
@@ -39,12 +39,16 @@ display: block
   <% end %>
 
   <div class="field">
+<table width="100%"><tr><td width="33.3%">
     <%= form.label :Vessel_Name %>
     <%= form.text_field :vessel, value:@refund.vessel %>
+    </td><td width="33.3%">
     <%= form.label :Rotation_Number %>
     <%= form.number_field :rotNum, value:@refund.rotNum %>
+</td><td width="33.3%">
     <%= form.label :Entry_Number %>
     <%= form.number_field :entryNum, value:@refund.entryNum %>  
+</td></tr></table>
 </div>
 <br>
   <div class="field">
@@ -185,7 +189,7 @@ display: block
 <p>III</p>
 <p> Payment Approved </p>
   <div class="field">
-    <%= form.label :application_Date %>
+    <%= form.label :approved_Date %>
     <%= form.date_select :appdate, value:@refund.appDate %>
   </div>
 <br>
