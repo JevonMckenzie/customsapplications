@@ -1,0 +1,134 @@
+<%= form_with(model: refund, local: true) do |form| %>
+  <% if refund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(refund.errors.count, "error") %> prohibited this refund from being saved:</h2>
+
+      <ul>
+        <% refund.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vessel %>
+    <%= form.text_field :vessel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rotNum %>
+    <%= form.number_field :rotNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entryNum %>
+    <%= form.number_field :entryNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refundof %>
+    <%= form.text_field :refundof %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enteredAs %>
+    <%= form.text_field :enteredAs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enteredAsQ %>
+    <%= form.number_field :enteredAsQ %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enteredAsV %>
+    <%= form.text_field :enteredAsV %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enteredAsR %>
+    <%= form.text_field :enteredAsR %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enteredAsD %>
+    <%= form.text_field :enteredAsD %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shouldBe %>
+    <%= form.text_field :shouldBe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shouldBeQ %>
+    <%= form.number_field :shouldBeQ %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shouldBeV %>
+    <%= form.text_field :shouldBeV %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shouldBeR %>
+    <%= form.text_field :shouldBeR %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shouldBeD %>
+    <%= form.text_field :shouldBeD %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reasonSupportRefund %>
+    <%= form.text_field :reasonSupportRefund %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refundClaimed %>
+    <%= form.text_field :refundClaimed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :signature %>
+    <%= form.text_field :signature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appDate %>
+    <%= form.date_select :appDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compSig %>
+    <%= form.text_field :compSig %>
+  </div>
+
+  <div class="field">
+    <%= form.label :claimNum %>
+    <%= form.number_field :claimNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :receivedDate %>
+    <%= form.date_select :receivedDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :claimantSig %>
+    <%= form.text_field :claimantSig %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

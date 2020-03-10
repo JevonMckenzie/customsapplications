@@ -1,0 +1,53 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vessel: MyString
+  rotNum: 1
+  entryNum: 1
+  refundof: 9.99
+  enteredAs: MyString
+  enteredAsQ: 1
+  enteredAsV: 9.99
+  enteredAsR: 9.99
+  enteredAsD: 9.99
+  shouldBe: MyString
+  shouldBeQ: 1
+  shouldBeV: 9.99
+  shouldBeR: 9.99
+  shouldBeD: 9.99
+  reasonSupportRefund: MyString
+  refundClaimed: 9.99
+  date: 2020-03-09
+  signature: MyString
+  appDate: 2020-03-09
+  compSig: MyString
+  claimNum: 1
+  receivedDate: 2020-03-09
+  claimantSig: MyString
+  user: one
+
+two:
+  vessel: MyString
+  rotNum: 1
+  entryNum: 1
+  refundof: 9.99
+  enteredAs: MyString
+  enteredAsQ: 1
+  enteredAsV: 9.99
+  enteredAsR: 9.99
+  enteredAsD: 9.99
+  shouldBe: MyString
+  shouldBeQ: 1
+  shouldBeV: 9.99
+  shouldBeR: 9.99
+  shouldBeD: 9.99
+  reasonSupportRefund: MyString
+  refundClaimed: 9.99
+  date: 2020-03-09
+  signature: MyString
+  appDate: 2020-03-09
+  compSig: MyString
+  claimNum: 1
+  receivedDate: 2020-03-09
+  claimantSig: MyString
+  user: two
