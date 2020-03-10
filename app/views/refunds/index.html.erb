@@ -45,10 +45,10 @@ table, th, td, tr {
         <td><%= refund.refundof %></td>
         <td><%= refund.user.username %></td>
         <td><%=link_to 'Show', refund %>
-        <% if can? :update, refund %>
+        <% if current_user.admin == true %>
         <td><%= link_to 'Edit', edit_refund_path(refund) %></td>
         <% end %>
-        <% if can? :update, refund %>
+        <% if current_user.admin == true %>
         <td><%= link_to 'Destroy', refund, method: :delete, data: {confirm: 'Are You Sure?' } %>
         <% end %>
        </td>
