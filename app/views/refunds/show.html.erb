@@ -39,7 +39,7 @@ display: block
   <% end %>
 
   <div class="field">
-<table width="100%"><tr><td width="33.3%">
+<table style="border: none;" width="100%"><tr><td width="33.3%">
     <%= form.label :Vessel_Name %>
     <%= form.text_field :vessel, value:@refund.vessel %>
     </td><td width="33.3%">
@@ -162,12 +162,12 @@ display: block
 <br>
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date, value:@refund.date %>
+    <%= form.date_field :date, value:@refund.date, :readonly=>true %>
   </div>
 <br>
   <div class="field">
     <%= form.label :signature %>
-    <%= form.text_field :signature, value:@refund.signature %>
+    <%= form.text_field :signature, value:@refund.user.email, :readonly=>true %>
   </div>
 <br>
 <hr>

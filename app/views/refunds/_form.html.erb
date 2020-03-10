@@ -158,12 +158,12 @@ display: block
 <br>
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.date_field :date, value:refund.created_at, :readonly => true %>
   </div>
 <br>
   <div class="field">
     <%= form.label :signature %>
-    <%= form.text_field :signature %>
+    <%= form.text_field :signature, value:current_user.email, :readonly => true  %>
   </div>
 <br>
 <hr>

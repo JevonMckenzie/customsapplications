@@ -32,7 +32,8 @@ table, th, td, tr {
       <th>Rotion Number</th>
       <th>Entry Number</th>
       <th>Refund Amount</th>
-      <th>User</th>
+      <th>Application Date</th>
+      <th>Signature of Claimant</th>
       
     </tr>
   </thead>
@@ -44,6 +45,7 @@ table, th, td, tr {
         <td><%= refund.rotNum %></td>
         <td><%= refund.entryNum %></td>
         <td><%= refund.refundof %></td>
+         <td><%= refund.date %></td>
         <td><%= refund.user.username %></td>
         <td><%=link_to 'Show', refund %>
         <% if current_user.admin == true %>
