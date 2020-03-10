@@ -168,6 +168,8 @@ display: block
 <br>
 <hr>
 <br>
+
+<% if current_user.admin == true %>
 <h2 align="center"> FOR OFFICIAL USE ONLY </h2>
 <table width="100%">
 <tr>
@@ -212,6 +214,7 @@ display: block
     <%= form.label :claimant_Signature %>
     <%= form.text_field :claimantSig %>
   </div>
+<% end %>
 <br>
   <div class="actions">
     <%= form.submit %>

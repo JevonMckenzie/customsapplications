@@ -38,6 +38,7 @@ table, th, td, tr {
   </thead>
 <tbody>
     <% @refunds.each do |refund| %>
+    <% if refund.user.username == current_user.username || current_user.admin == true %>
       <tr>
         <td><%= refund.vessel %></td>
         <td><%= refund.rotNum %></td>
@@ -53,7 +54,7 @@ table, th, td, tr {
         <% end %>
        </td>
       </tr>
-    
+    <% end %>
 
 <%end%>
 </tbody>

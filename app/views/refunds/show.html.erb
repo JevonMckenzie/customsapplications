@@ -190,7 +190,7 @@ display: block
 <p> Payment Approved </p>
   <div class="field">
     <%= form.label :approved_Date %>
-    <%= form.date_select :appdate, value:@refund.appDate %>
+    <%= form.date_select :appdate, value:@refund.appDate  %>
   </div>
 <br>
   <div class="field">
@@ -217,9 +217,11 @@ display: block
     <%= form.text_field :claimSig, value:@refund.claimantSig %>
   </div>
 <br>
+<% if current_user.admin == true %>
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
 <br>
 <% end %>
 
