@@ -1,0 +1,426 @@
+<html>
+<head>
+<title> Customs Application For Refund Of Duty </title>
+<style>
+
+</style>
+</head> 
+<body>
+  <div style="margin-left: 5%">
+
+<%= form_with(model: postmod, local: true) do |form| %>
+  <% if postmod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(postmod.errors.count, "error") %> prohibited this postmod from being saved:</h2>
+
+      <ul>
+        <% postmod.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2> Section I </h2>
+  <table align="" width=100%>
+    <tr><td align="left" width="33.3%">
+          <div class="field" style="display: inline-flex;">
+            <%= form.label :Entry_number %><%= form.text_field :entrynum%>
+              
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%"> 
+          <div class="field" style="display: inline-flex;">
+            <%= form.label :Office_code %>  <%= form.text_field :officecode %>
+               
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%">
+
+         </td> 
+    </tr>
+</table>
+<hr>
+  <h2> Section II </h2>
+  <h2><u>Certifications</u></h2>
+  <table width="100%">
+    <tr><td width="33.3%" align="left">
+            <h4>Exemptions:</h4></h5> </td>
+         <td width="33.3%" align="left"><h4>Agreements:</h4></td>
+         <td width="33.3%" align="left"><h4>Permits/Certificates:</h4></td></tr>
+    <tr>
+         <td width="33.3%" align="left">
+            <div class="field" style="display: inline-flex;">
+                 <%= form.check_box :mof %>
+                  <%= form.label :Ministry_Of_Finance %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :government %>
+    <%= form.label :Government %>
+    
+  </div></td><td width="33.3%" align="left">
+      <div class="field" style="display: inline-flex;">
+        <%= form.check_box :doe %>
+    <%= form.label :DOE %>
+    
+  </div>
+  </td></tr>
+  <tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :beltrade %>
+    <%= form.label :Beltraid %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :nagreement %>
+    <%= form.label :National_Agreements %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :cpharmacy %>
+    <%= form.label :Chief_Pharmacy %>
+    
+  </div></td>
+</tr>
+<tr>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline-flex;">
+        <%= form.check_box :motourism %>
+    <%= form.label :Ministry_of_tourism %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+
+
+
+    </td>
+
+  <td width="33.3%" align="left">  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :townership %>
+    <%= form.label :Transfer_of_ownership %>
+    
+  </div></td></tr>
+  <tr><td width="33.3%" align="left">
+
+
+
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :mohealth %>
+    <%= form.label :Ministry_of_health %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+
+
+
+
+  </td>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline-flex;">
+        <%= form.check_box :centralbank %>
+    <%= form.label :Central_Bank %>
+    
+  </div>
+</td></tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :moeducation %>
+    <%= form.label :Ministry_of_education %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :mosecurity %>
+    <%= form.label :Ministry_of_national_security %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :dciagency %>
+    <%= form.label :Diplomatic_Consulate_International_Agency %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :bosie %>
+    <%= form.label :Bureau_of_Standards_Import_Export %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">   
+  <div class="field" style="display: inline-flex;">
+    <%= form.label :Other%>
+    <%= form.text_area :otherexcert %>
+  </div>
+  </td></tr>
+
+</table>
+
+<table width="100%">
+
+<tr><td width="33.3%" align="left"><h2><u>General Modification</u>:</h2></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline-flex;">
+      <%= form.label :Amenment_fee_receipt_for_general_modification %>
+       <%= form.number_field :amendfeerec %>
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+
+ <div class="field" style="display: inline-flex;">
+  <%= form.check_box :exporter %>
+    <%= form.label :Exporter %>  
+  </div>
+</td>
+
+
+  <td width="33.3%" align="left">
+
+
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :importer %>
+    <%= form.label :Importer %>
+    
+  </div>
+</td>
+
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :noitems %>
+    <%= form.label :Number_of_items %>
+    
+  </div>
+</td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :nopackage %>
+    <%= form.label :No_package %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :vessel %>
+    <%= form.label :vessel %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.check_box :fccontainernum %> <%= form.label :fccontainernum %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :location %> <%= form.label :location %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :nmass %> <%= form.label :nmass %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :tainvoice %> <%= form.label :tainvoice %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.check_box :description %> <%= form.label :description %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+  <%= form.check_box :commcode %>  <%= form.label :commcode %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :vinserial %><%= form.label :vinserial %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.check_box :airbill %> <%= form.label :airbill %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.check_box :origin %> <%= form.label :origin %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :gmass %><%= form.label :gmass %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :currency %> <%= form.label :currency %>
+   
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :iquantity %><%= form.label :iquantity %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :procexproccode %><%= form.label :procexproccode %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :itemvalue %><%= form.label :itemvalue %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :prevdocrefnum %><%= form.label :prevdocrefnum %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :bolading %><%= form.label :bolading %>
+    
+  </div>
+</td></tr></table>
+
+ <table width="100%">
+  <tr><td width="33.3%" align="left"><h2><u>Attachment of Supporting Documents</u>:</h2></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline-flex;">
+     <%= form.label :Ammendment_fee_receipt_for_attachment_of_supporting_document %> <%= form.number_field :amendfeerec %>
+       
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+  </tr></table>
+
+<table width="100%">
+  <tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.check_box :transletter %> <%= form.label :transletter %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :invoice %><%= form.label :invoice %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :vvslip %><%= form.label :Vehicle_Valuation_Slip %>
+    
+  </div>
+</td></tr>
+<tr>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :sscertificate %><%= form.label :Short_Shipment_Certificate %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :popayment %><%= form.label :Proof_of_payment %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :certorigin %><%= form.label :Certificate_of_origin %>
+    
+  </div>
+</td>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :worksheet %><%= form.label :Worksheet %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :overlandedcert %><%= form.label :Overlanded_Certificate %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+ <div class="field" style="display: inline-flex;">
+    <%= form.label :Other %><%= form.text_area :otherasdbox %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+   <%= form.label :reason %> <%= form.text_area :reason %>
+    
+  </div></td>
+</tr>
+</table>
+<hr>
+<h2>Section III</h2>
+<h2 align="center"> For Official Use Only </h2>
+<table>
+  <tr>
+ <td width="33.3%" align="left">
+ 
+
+
+
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :approved %><%= form.label :Approved %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :denied %><%= form.label :Denied %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline-flex;">
+    <%= form.check_box :addinfo %><%= form.label :AdditionalIInformation %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+    <div class="field" style="display: inline-flex;">
+    <%= form.label :Remarks %><%= form.text_area :remarks %>
+    
+  </div>
+</tr></td></tr>
+<tr><td>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</td>
+</table>
+<% end %>
+</div>
+</body></html>

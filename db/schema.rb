@@ -10,10 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_003651) do
+ActiveRecord::Schema.define(version: 2020_08_08_200220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "postmods", force: :cascade do |t|
+    t.boolean "mof"
+    t.boolean "beltrade"
+    t.boolean "motourism"
+    t.boolean "mohealth"
+    t.boolean "moeducation"
+    t.boolean "mosecurity"
+    t.boolean "dciagency"
+    t.boolean "bosie"
+    t.boolean "other"
+    t.boolean "government"
+    t.boolean "nagreement"
+    t.boolean "doe"
+    t.boolean "cpharmacy"
+    t.boolean "townership"
+    t.boolean "centralbank"
+    t.boolean "exporter"
+    t.boolean "importer"
+    t.boolean "noitems"
+    t.boolean "nopackage"
+    t.boolean "vessel"
+    t.boolean "fccontainernum"
+    t.boolean "location"
+    t.boolean "nmass"
+    t.boolean "tainvoice"
+    t.boolean "description"
+    t.boolean "commcode"
+    t.boolean "vinserial"
+    t.boolean "airbill"
+    t.boolean "origin"
+    t.boolean "gmass"
+    t.boolean "currency"
+    t.boolean "iquantity"
+    t.boolean "procexproccode"
+    t.boolean "itemvalue"
+    t.boolean "prevdocrefnum"
+    t.boolean "bolading"
+    t.integer "amendfeerec"
+    t.boolean "transletter"
+    t.boolean "invoice"
+    t.boolean "vvslip"
+    t.boolean "sscertificate"
+    t.boolean "otherasd"
+    t.boolean "popayment"
+    t.boolean "certorigin"
+    t.boolean "worksheet"
+    t.boolean "overlandedcert"
+    t.string "othercertbox"
+    t.string "otherasdbox"
+    t.string "reason"
+    t.boolean "approved"
+    t.boolean "denied"
+    t.boolean "addinfo"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "entrynum"
+    t.string "officecode"
+    t.string "otherexcert"
+    t.index ["user_id"], name: "index_postmods_on_user_id"
+  end
 
   create_table "refunds", force: :cascade do |t|
     t.string "vessel"
@@ -58,5 +120,6 @@ ActiveRecord::Schema.define(version: 2020_03_10_003651) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "postmods", "users"
   add_foreign_key "refunds", "users"
 end

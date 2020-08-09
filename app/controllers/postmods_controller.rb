@@ -1,0 +1,74 @@
+class PostmodsController < ApplicationController
+  before_action :set_postmod, only: [:show, :edit, :update, :destroy]
+
+  # GET /postmods
+  # GET /postmods.json
+  def index
+    @postmods = Postmod.all
+  end
+
+  # GET /postmods/1
+  # GET /postmods/1.json
+  def show
+  end
+
+  # GET /postmods/new
+  def new
+    @postmod = Postmod.new
+  end
+
+  # GET /postmods/1/edit
+  def edit
+  end
+
+  # POST /postmods
+  # POST /postmods.json
+  def create
+    @postmod = Postmod.new(postmod_params)
+
+    respond_to do |format|
+      if @postmod.save
+        format.html { redirect_to @postmod, notice: 'Postmod was successfully created.' }
+        format.json { render :show, status: :created, location: @postmod }
+      else
+        format.html { render :new }
+        format.json { render json: @postmod.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /postmods/1
+  # PATCH/PUT /postmods/1.json
+  def update
+    respond_to do |format|
+      if @postmod.update(postmod_params)
+        format.html { redirect_to @postmod, notice: 'Postmod was successfully updated.' }
+        format.json { render :show, status: :ok, location: @postmod }
+      else
+        format.html { render :edit }
+        format.json { render json: @postmod.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /postmods/1
+  # DELETE /postmods/1.json
+  def destroy
+    @postmod.destroy
+    respond_to do |format|
+      format.html { redirect_to postmods_url, notice: 'Postmod was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_postmod
+      @postmod = Postmod.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def postmod_params
+      params.require(:postmod).permit(:mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo, :user_id)
+    end
+end
