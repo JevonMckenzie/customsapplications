@@ -1,6 +1,6 @@
 class PostmodsController < ApplicationController
   before_action :set_postmod, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /postmods
   # GET /postmods.json
   def index
@@ -25,7 +25,7 @@ class PostmodsController < ApplicationController
   # POST /postmods.json
   def create
     @postmod = Postmod.new(postmod_params)
-
+    @postmod.user = current_user
     respond_to do |format|
       if @postmod.save
         format.html { redirect_to @postmod, notice: 'Postmod was successfully created.' }
@@ -69,6 +69,6 @@ class PostmodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def postmod_params
-      params.require(:postmod).permit(:mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo, :user_id)
+      params.require(:postmod).permit(:mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo)
     end
 end
