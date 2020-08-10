@@ -69,6 +69,6 @@ class PostmodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def postmod_params
-      params.require(:postmod).permit(:mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo)
+      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo)
     end
 end
