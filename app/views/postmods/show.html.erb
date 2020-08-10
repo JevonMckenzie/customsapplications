@@ -1,14 +1,201 @@
+<html>
+<head>
+<title> Customs Application For Post Modification </title>
+<style>
+
+label{
+display: inline-flex;
+}
+</style>
+</head> 
+
+<body style="background-color:#f5f3f2; ">
+<h1 align="center">Customs Application For Post Modification</h1>
+<%= link_to 'Home', root_path %>
+
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br><br>
+
+<%= link_to 'View List of Applications Submitted for Refund of Duty', refunds_path %><br><br>
+<%= link_to 'Application for Refund of Duty', new_refund_path %>
+<br><br>
+
+<%= form_with(model: @postmod, local: true) do |form| %>
+  <% if @postmod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(postmod.errors.count, "error") %> prohibited this refund from being saved:</h2>
+
+      <ul>
+        <% @postmod.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <p id="notice"><%= notice %></p>
 
+<h2> Section I</h2>
+<div class="field">
+<table style="border: none;" width="100%"><tr><td width="33.3%">
+    <%= form.label :Entry_Number %>
+    <%= form.text_field :entrynum, value:@postmod.entrynum %>
+    </td><td width="33.3%">
+    <%= form.label :Office_Code %>
+    <%= form.number_field :officecode, value:@postmod.officecode %>
+</td><td width="33.3%">
+    
+</td></tr></table>
+</div>
+
+<hr>
+<h2> Section II </h2>
+<h2> Certifications </h2>
 <p>
+
+
+<table style="border: none;" width="100%"><tr><td width="33.3%"><h4>Exemptions</h4></td><td width="33.3%"><h4>Agreements</h4></td><td width="33.3%"><h4>Permits/Certificates</h4></td></tr><tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :mof, value:@postmod.mof %><%= form.label :Ministry_of_Finance %>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :government, value:@postmod.government %> <%= form.label :government %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :doe, value:@postmod.doe %> <%= form.label :Department_of_environment %>
+    
+  </div>
+</td>
+
+</tr><tr>
+
+
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :beltrade, value:@postmod.beltrade %> <%= form.label :Beltrade %>
+   
+</div>
+</td>
+
+
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :nagreement, value:@postmod.nagreement %> <%= form.label :National_Agreement %>
+   
+</div>
+</td>
+
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :cpharmacy, value:@postmod.cpharmacy %> <%= form.label :Chief_Pharmacy %>
+   
+</div>
+</td>
+</tr>
+<tr>
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :motourism, value:@postmod.motourism %> <%= form.label :Ministry_of_Tourism %>
+   
+</div>
+</td>
+
+<td width="33.3%">
+<div class="field">
+ 
+   
+</div>
+</td>
+
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :townership, value:@postmod.townership %> <%= form.label :Transfer_of_ownership %>
+   
+</div>
+</td> 
+</tr>
+<tr>
+  <td width="33.3%">
+<div class="field">
+  <%= form.check_box :mohealth, value:@postmod.mohealth%> <%= form.label :Ministry_of_health %>
+   
+</div>
+</td> 
+
+<td width="33.3%">
+<div class="field">
+
+   
+</div>
+</td> 
+
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :centralbank, value:@postmod.centralbank %> <%= form.label :Central_Bank %>
+   
+</div>
+</td> 
+</tr>
+<tr>
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :moeducation, value:@postmod.moeducation %> <%= form.label :Ministry_of_Education %>
+   
+</div>
+</td> 
+</tr>
+
+<tr>
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :mosecurity, value:@postmod.mosecurity %> <%= form.label :Ministry_of_National_Security %>
+   
+</div>
+</td> 
+</tr>
+
+<tr>
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :dciagency, value:@postmod.dciagency %> <%= form.label :Bureau_of_standards_Import_Export %>
+   
+</div>
+</td> 
+</tr>
+
+<tr>
+<td width="33.3%">
+<div class="field">
+  <%= form.check_box :bosie, value:@postmod.bosie %> <%= form.label :Diplomatic_Consulate_International_Agency %>
+   
+</div>
+</td> 
+</tr>
+
+<tr>
+<td width="33.3%">
+<div class="field">
+ <%= form.label :Other %> <%= form.text_area :otherexcert, value:@postmod.otherexcert %> 
+   
+</div>
+</td> 
+</tr>
+
+</table>
+<h2>General Modification</h2>
+
+
+
   <strong>Mof:</strong>
   <%= @postmod.mof %>
 </p>
 
-<p>
-  <strong>Beltrade:</strong>
-  <%= @postmod.beltrade %>
-</p>
 
 <p>
   <strong>Motourism:</strong>
@@ -55,10 +242,6 @@
   <%= @postmod.nagreement %>
 </p>
 
-<p>
-  <strong>Doe:</strong>
-  <%= @postmod.doe %>
-</p>
 
 <p>
   <strong>Cpharmacy:</strong>
@@ -267,3 +450,6 @@
 
 <%= link_to 'Edit', edit_postmod_path(@postmod) %> |
 <%= link_to 'Back', postmods_path %>
+<% end %>
+</body>
+</html>
