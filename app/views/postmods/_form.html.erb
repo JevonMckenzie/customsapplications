@@ -7,7 +7,13 @@
 </head> 
 <body>
   <div style="margin-left: 5%">
+<%= link_to 'Home', root_path %>
 
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br><br>
+
+<%= link_to 'View List of Applications Submitted for Post Modification', postmods_path %><br><br>
+<br><br>
 <%= form_with(model: postmod, local: true) do |form| %>
   <% if postmod.errors.any? %>
     <div id="error_explanation">
