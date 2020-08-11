@@ -14,7 +14,6 @@ display: block
 }
 </style>
 
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -48,16 +47,12 @@ display: block
   <% end %>
 
   <div class="field">
-<table style="border: none;" width="100%"><tr><td width="33.3%">
     <%= form.label :Vessel_Name %>
-    <%= form.text_field :vessel, value:@refund.vessel %>
-    </td><td width="33.3%">
+    <%= form.text_field :vessel %>
     <%= form.label :Rotation_Number %>
-    <%= form.number_field :rotNum, value:@refund.rotNum %>
-</td><td width="33.3%">
+    <%= form.number_field :rotNum %>
     <%= form.label :Entry_Number %>
-    <%= form.number_field :entryNum, value:@refund.entryNum %>  
-</td></tr></table>
+    <%= form.number_field :entryNum %>  
 </div>
 <br>
   <div class="field">
