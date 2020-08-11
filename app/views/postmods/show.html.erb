@@ -2,14 +2,25 @@
 <head>
 <title> Customs Application For Post Modification </title>
 <style>
-
+table, th, td, tr {
+ border: ;
+ border-collapse: collapse;
+}
 label{
-display: inline-flex;
+display: inline;
 }
 </style>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+
 </head> 
 
-<body style="background-color:#f5f3f2; ">
+<body style="background-color:#f5f3f2; margin-left: 2%; " class="container">
 <h1 align="center">Customs Application For Post Modification</h1>
 <%= link_to 'Home', root_path %>
 
@@ -50,8 +61,8 @@ display: inline-flex;
 
 <hr>
 <h2> Section II </h2>
-<h2> Certifications </h2>
-<p>
+<h3> Certifications </h3>
+
 
 
 <table style="border: none;" width="100%"><tr><td width="33.3%"><h4>Exemptions</h4></td><td width="33.3%"><h4>Agreements</h4></td><td width="33.3%"><h4>Permits/Certificates</h4></td></tr><tr>
@@ -187,266 +198,284 @@ display: inline-flex;
 </td> 
 </tr>
 
+</table><br>
+<table width="100%"><tr><td width="33.3%" align="left"><h3><u>General Modification</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline-flex;">
+      <%= form.label :Amenment_fee_receipt_for_general_modification %>
+       <%= form.number_field :amendfeerecgm, value:@amendfeerecgm %>
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+</tr>
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :mof, value:@postmod.exporter %><%= form.label :Exporter %>
+    
+  </div>
+    </td>
+    <td width="33.3%">
+      <div class="field">
+    <%= form.check_box :importer, value:@postmod.importer %> <%= form.label :Importer %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :noitems, value:@postmod.noitems %> <%= form.label :Number_Of_Items %>
+    
+  </div>
+</td>
+
+</tr>
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :nopackage, value:@postmod.nopackage %><%= form.label :No_package %>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :vessel, value:@postmod.vessel %> <%= form.label :Vessel %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :fccontainernum, value:@postmod.fccontainernum %> <%= form.label :Full_container_container_number %>
+    
+  </div>
+</td>
+
+</tr>
+
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :location, value:@postmod.location %><%= form.label :Location %>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :nmass, value:@postmod.nmass %> <%= form.label :Net_Mass %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :tainvoice, value:@postmod.tainvoice %> <%= form.label :Total_amount_invoice %>
+    
+  </div>
+</td>
+
+</tr>
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :description, value:@postmod.description %><%= form.label :Description%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :commcode, value:@postmod.commcode %> <%= form.label :Commodity_Code %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :vinserial, value:@postmod.vinserial %> <%= form.label :Vin_Number_Serial_Number %>
+    
+  </div>
+</td>
+
+</tr>
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :airbill, value:@postmod.airbill %><%= form.label :Airway_bill%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :origin, value:@postmod.origin %> <%= form.label :Origin %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :gmass, value:@postmod.gmass %> <%= form.label :Gross_Mass %>
+    
+  </div>
+</td>
+
+</tr>
+
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :currency, value:@postmod.currency %><%= form.label :Currency%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :iquantity, value:@postmod.iquantity %> <%= form.label :Item_Quantity %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :procexproccode, value:@postmod.procexproccode %> <%= form.label :Procedure_extended_procedure_code %>
+    
+  </div>
+</td>
+
+</tr>
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :itemvalue, value:@postmod.itemvalue %><%= form.label :Item_value%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :prevdocrefnum, value:@postmod.prevdocrefnum %> <%= form.label :Previous_document_reference_number %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :bolading, value:@postmod.bolading %> <%= form.label :Bill_of_lading %>
+    
+  </div>
+</td>
+
+</tr> </table><br>
+
+ <table width="100%">
+  <tr><td width="33.3%" align="left"><h3><u>Attachment of Supporting Documents</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline-flex;">
+     <%= form.label :Ammendment_fee_receipt_for_attachment_of_supporting_document %> <%= form.number_field :amendfeerec, value:@amendfeerec %>
+       
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+  </tr></table>
+
+<table width="100%">
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :transletter, value:@postmod.transletter %><%= form.label :Translation_Letter%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :invoice, value:@postmod.invoice %> <%= form.label :Invoice %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :vvslip, value:@postmod.vvslip %> <%= form.label :Vehicle_Valuation_Slip %>
+    
+  </div>
+</td>
+
+</tr> 
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :sscertificate, value:@postmod.sscertificate %><%= form.label :Short_Shipment_Certificate%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :popayment, value:@postmod.popayment %> <%= form.label :Proof_of_payment %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :certorigin, value:@postmod.certorigin %> <%= form.label :Certificate_of_origin %>
+    
+  </div>
+</td>
+
+</tr> 
+
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :worksheet, value:@postmod.worksheet %><%= form.label :Worksheet%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :overlandedcert, value:@postmod.overlandedcert %> <%= form.label :Overlanded_Certificate %>
+   
+  </div>
+</td></tr><tr>
+<td width="33.3%">
+    <div class="field">
+  <%= form.label :Other %> <%= form.text_area :othercertbox, value:@postmod.othercertbox %> 
+    
+  </div>
+</td>
+
+<td width="33.3%">
+    <div class="field">
+  <%= form.label :Reason %> <%= form.text_area :reason, value:@postmod.reason %> 
+    
+  </div>
+</td>
+
+</tr> 
 </table>
-<h2>General Modification</h2>
 
+<hr>
+<h2>Section III</h2>
+<h2 align="center">For Official Use</h2>
+<table width=100%>
+<tr>
+  <td width="33.3%">
+    <div class="field">
+    <%= form.check_box :approved, value:@postmod.approved %><%= form.label :Approved%>
+    
+  </div>
+    </td><td width="33.3%">
+      <div class="field">
+    <%= form.check_box :denied, value:@postmod.denied %> <%= form.label :Denied %>
+   
+  </div>
+</td>
+<td width="33.3%">
+    <div class="field">
+   <%= form.check_box :addinfo, value:@postmod.addinfo %> <%= form.label :Additional_Information %>
+    
+  </div>
+</td>
 
-
-  <strong>Mof:</strong>
-  <%= @postmod.mof %>
-</p>
-
-
-<p>
-  <strong>Motourism:</strong>
-  <%= @postmod.motourism %>
-</p>
-
-<p>
-  <strong>Mohealth:</strong>
-  <%= @postmod.mohealth %>
-</p>
-
-<p>
-  <strong>Moeducation:</strong>
-  <%= @postmod.moeducation %>
-</p>
-
-<p>
-  <strong>Mosecurity:</strong>
-  <%= @postmod.mosecurity %>
-</p>
-
-<p>
-  <strong>Dciagency:</strong>
-  <%= @postmod.dciagency %>
-</p>
-
-<p>
-  <strong>Bosie:</strong>
-  <%= @postmod.bosie %>
-</p>
-
-<p>
-  <strong>Other:</strong>
-  <%= @postmod.other %>
-</p>
-
-<p>
-  <strong>Government:</strong>
-  <%= @postmod.government %>
-</p>
-
-<p>
-  <strong>Nagreement:</strong>
-  <%= @postmod.nagreement %>
-</p>
-
-
-<p>
-  <strong>Cpharmacy:</strong>
-  <%= @postmod.cpharmacy %>
-</p>
-
-<p>
-  <strong>Townership:</strong>
-  <%= @postmod.townership %>
-</p>
-
-<p>
-  <strong>Centralbank:</strong>
-  <%= @postmod.centralbank %>
-</p>
-
-<p>
-  <strong>Exporter:</strong>
-  <%= @postmod.exporter %>
-</p>
-
-<p>
-  <strong>Importer:</strong>
-  <%= @postmod.importer %>
-</p>
-
-<p>
-  <strong>Noitems:</strong>
-  <%= @postmod.noitems %>
-</p>
-
-<p>
-  <strong>Nopackage:</strong>
-  <%= @postmod.nopackage %>
-</p>
-
-<p>
-  <strong>Vessel:</strong>
-  <%= @postmod.vessel %>
-</p>
-
-<p>
-  <strong>Fccontainernum:</strong>
-  <%= @postmod.fccontainernum %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @postmod.location %>
-</p>
-
-<p>
-  <strong>Nmass:</strong>
-  <%= @postmod.nmass %>
-</p>
-
-<p>
-  <strong>Tainvoice:</strong>
-  <%= @postmod.tainvoice %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @postmod.description %>
-</p>
-
-<p>
-  <strong>Commcode:</strong>
-  <%= @postmod.commcode %>
-</p>
-
-<p>
-  <strong>Vinserial:</strong>
-  <%= @postmod.vinserial %>
-</p>
-
-<p>
-  <strong>Airbill:</strong>
-  <%= @postmod.airbill %>
-</p>
-
-<p>
-  <strong>Origin:</strong>
-  <%= @postmod.origin %>
-</p>
-
-<p>
-  <strong>Gmass:</strong>
-  <%= @postmod.gmass %>
-</p>
-
-<p>
-  <strong>Currency:</strong>
-  <%= @postmod.currency %>
-</p>
-
-<p>
-  <strong>Iquantity:</strong>
-  <%= @postmod.iquantity %>
-</p>
-
-<p>
-  <strong>Procexproccode:</strong>
-  <%= @postmod.procexproccode %>
-</p>
-
-<p>
-  <strong>Itemvalue:</strong>
-  <%= @postmod.itemvalue %>
-</p>
-
-<p>
-  <strong>Prevdocrefnum:</strong>
-  <%= @postmod.prevdocrefnum %>
-</p>
-
-<p>
-  <strong>Bolading:</strong>
-  <%= @postmod.bolading %>
-</p>
-
-<p>
-  <strong>Amendfeerec:</strong>
-  <%= @postmod.amendfeerec %>
-</p>
-
-<p>
-  <strong>Transletter:</strong>
-  <%= @postmod.transletter %>
-</p>
-
-<p>
-  <strong>Invoice:</strong>
-  <%= @postmod.invoice %>
-</p>
-
-<p>
-  <strong>Vvslip:</strong>
-  <%= @postmod.vvslip %>
-</p>
-
-<p>
-  <strong>Sscertificate:</strong>
-  <%= @postmod.sscertificate %>
-</p>
-
-<p>
-  <strong>Otherasd:</strong>
-  <%= @postmod.otherasd %>
-</p>
-
-<p>
-  <strong>Popayment:</strong>
-  <%= @postmod.popayment %>
-</p>
-
-<p>
-  <strong>Certorigin:</strong>
-  <%= @postmod.certorigin %>
-</p>
-
-<p>
-  <strong>Worksheet:</strong>
-  <%= @postmod.worksheet %>
-</p>
-
-<p>
-  <strong>Overlandedcert:</strong>
-  <%= @postmod.overlandedcert %>
-</p>
-
-<p>
-  <strong>Othercertbox:</strong>
-  <%= @postmod.othercertbox %>
-</p>
-
-<p>
-  <strong>Otherasdbox:</strong>
-  <%= @postmod.otherasdbox %>
-</p>
-
-<p>
-  <strong>Reason:</strong>
-  <%= @postmod.reason %>
-</p>
-
-<p>
-  <strong>Approved:</strong>
-  <%= @postmod.approved %>
-</p>
-
-<p>
-  <strong>Denied:</strong>
-  <%= @postmod.denied %>
-</p>
-
-<p>
-  <strong>Addinfo:</strong>
-  <%= @postmod.addinfo %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @postmod.user_id %>
-</p>
+</tr>
+<tr>
+  <td width="33.3%">
+    <div class="field">
+   <%= form.check_box :othercertbox, value:@postmod.othercertbox %> <%= form.label :Remarks %>
+    
+  </div>
+</td>
+</tr>
+</table>
+<br><br>
 
 <%= link_to 'Edit', edit_postmod_path(@postmod) %> |
 <%= link_to 'Back', postmods_path %>
