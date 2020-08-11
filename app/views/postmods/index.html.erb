@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> Customs Application For Refund Of Duty </title>
+<title> Customs Application For Post Modification</title>
 <style>
 table, th, td, tr {
  border: 1px solid black;
@@ -14,7 +14,7 @@ table, th, td, tr {
 
 <p id="notice"><%= notice %></p>
 
-<h1 align="center">Submitted Applications For Refund OF Duty</h1>
+<h1 align="center">Submitted Applications For Post Modification</h1>
 <br><br>
 <%= link_to 'Home', root_path %>
 
@@ -23,13 +23,14 @@ table, th, td, tr {
 <a href="http://customsapplications.herokuapp.com/admin">Administration Panel</a><br><br>
 <%= link_to 'View List of Applications Submitted for Refund of Duty', refunds_path %><br><br>
 <%= link_to 'New Application for Refund of Duty', new_refund_path %><br><br>
-<%= link_to 'New Postmod', new_postmod_path %>
+<%= link_to 'View List of Applications Submitted for Post Modification', postmodss_path %><br><br>
+<%= link_to 'New Application for Post Modification', new_postmod_path %>
 <br><br>
 
 
 <p id="notice"><%= notice %></p>
 
-<h1>Postmods</h1>
+<h2 align="center">Requests For Post Modification</h1>
 
 
 <table width="100%">
