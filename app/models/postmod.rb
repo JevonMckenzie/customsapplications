@@ -43,6 +43,8 @@ class Postmod < ApplicationRecord
   validates :reason, :presence => true, :if => :certorigin?
   validates :reason, :presence => true, :if => :worksheet?
   validates :reason, :presence => true, :if => :overlandedcert?
+  validates :entrynum, :presence => true
+  validates :officecode, :presence => true
 
 end
 
