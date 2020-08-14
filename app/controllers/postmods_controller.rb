@@ -28,10 +28,11 @@ class PostmodsController < ApplicationController
     @postmod.user = current_user
     respond_to do |format|
       if @postmod.save
+        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
         format.html { redirect_to @postmod, notice: 'Post modification was successfully created.' }
         format.json { render :show, status: :created, location: @postmod }
 
-        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
+        
  
 
        

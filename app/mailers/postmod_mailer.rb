@@ -8,3 +8,4 @@ class PostmodMailer < ApplicationMailer
     mail(to: 'jevonmmckenzie@gmail.com', subject: 'New Request for Post Modification has arrived. Please see summary of details.')
   end
 end
+	
