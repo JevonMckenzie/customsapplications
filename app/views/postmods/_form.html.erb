@@ -15,6 +15,16 @@ table, th, td, tr {
 label{
 display: inline;
 }
+
+.field_with_errors input{
+  border: 1px solid red !important;
+  background-color: ;
+}
+
+.area_with_errors input{
+  border: 1px solid red !important;
+  background-color: ;
+}
 </style>
 </head> 
 
@@ -31,16 +41,18 @@ display: inline;
 <%= form_with(model: postmod, local: true) do |form| %>
   <% if postmod.errors.any? %>
 
-    <div id="error_explanation">
-      <h2><%= pluralize(postmod.errors.count, "error") %> prohibited this postmod from being saved:</h2>
+    <div id="error_explanation" style="font-color: red;">
+      <h2 style="color:red"><%= pluralize(postmod.errors.count, "error") %> prohibited this postmod from being saved:</h2>
 
       <ul>
         <% postmod.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li style="color: red;"><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
+
+
 
   <h2> Section I </h2>
   <table align="" width=100%>

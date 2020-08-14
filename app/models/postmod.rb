@@ -1,28 +1,28 @@
 class Postmod < ApplicationRecord
   belongs_to :user
   
-  validates :amendfeerec, :presence => true, :if => :exporter? 
-  validates :amendfeerec, :presence => true, :if => :importer?
-  validates :amendfeerec, :presence => true, :if => :noitems?
-  validates :amendfeerec, :presence => true, :if => :nopackage?
-  validates :amendfeerec, :presence => true, :if => :fccontainernum?
-  validates :amendfeerec, :presence => true, :if => :vessel?
-  validates :amendfeerec, :presence => true, :if => :location?
-  validates :amendfeerec, :presence => true, :if => :nmass?
-  validates :amendfeerec, :presence => true, :if => :tainvoice?
-  validates :amendfeerec, :presence => true, :if => :description?
-  validates :amendfeerec, :presence => true, :if => :commcode?
-  validates :amendfeerec, :presence => true, :if => :vinserial?
-  validates :amendfeerec, :presence => true, :if => :airbill?
-  validates :amendfeerec, :presence => true, :if => :origin?
-  validates :amendfeerec, :presence => true, :if => :gmass?
-  validates :amendfeerec, :presence => true, :if => :currency?
-  validates :amendfeerec, :presence => true, :if => :iquantity?
-  validates :amendfeerec, :presence => true, :if => :procexproccode?
-  validates :amendfeerec, :presence => true, :if => :itemvalue?
-  validates :amendfeerec, :presence => true, :if => :prevdocrefnum?
-  validates :amendfeerec, :presence => true, :if => :bolading?
-  validates :amendfeerec, :presence => true, :if => :otherexcert?
+  validates :amendfeerecgm, :presence => true, :if => :exporter? 
+  validates :amendfeerecgm, :presence => true, :if => :importer?
+  validates :amendfeerecgm, :presence => true, :if => :noitems?
+  validates :amendfeerecgm, :presence => true, :if => :nopackage?
+  validates :amendfeerecgm, :presence => true, :if => :fccontainernum?
+  validates :amendfeerecgm, :presence => true, :if => :vessel?
+  validates :amendfeerecgm, :presence => true, :if => :location?
+  validates :amendfeerecgm, :presence => true, :if => :nmass?
+  validates :amendfeerecgm, :presence => true, :if => :tainvoice?
+  validates :amendfeerecgm, :presence => true, :if => :description?
+  validates :amendfeerecgm, :presence => true, :if => :commcode?
+  validates :amendfeerecgm, :presence => true, :if => :vinserial?
+  validates :amendfeerecgm, :presence => true, :if => :airbill?
+  validates :amendfeerecgm, :presence => true, :if => :origin?
+  validates :amendfeerecgm, :presence => true, :if => :gmass?
+  validates :amendfeerecgm, :presence => true, :if => :currency?
+  validates :amendfeerecgm, :presence => true, :if => :iquantity?
+  validates :amendfeerecgm, :presence => true, :if => :procexproccode?
+  validates :amendfeerecgm, :presence => true, :if => :itemvalue?
+  validates :amendfeerecgm, :presence => true, :if => :prevdocrefnum?
+  validates :amendfeerecgm, :presence => true, :if => :bolading?
+  validates :amendfeerecgm, :presence => true, :if => :otherexcert?
 
   validates :amendfeerec, :presence => true, :if => :transletter?
   validates :amendfeerec, :presence => true, :if => :invoice?
@@ -33,6 +33,7 @@ class Postmod < ApplicationRecord
   validates :amendfeerec, :presence => true, :if => :certorigin?
   validates :amendfeerec, :presence => true, :if => :worksheet?
   validates :amendfeerec, :presence => true, :if => :overlandedcert?
+  validates :amendfeerec, :presence => true, :if => :reason?
 
   validates :reason, :presence => true, :if => :transletter?
   validates :reason, :presence => true, :if => :invoice?

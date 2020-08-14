@@ -28,12 +28,18 @@ class PostmodsController < ApplicationController
     @postmod.user = current_user
     respond_to do |format|
       if @postmod.save
-        format.html { redirect_to @postmod, notice: 'Postmod was successfully created.' }
+        format.html { redirect_to @postmod, notice: 'Post modification was successfully created.' }
         format.json { render :show, status: :created, location: @postmod }
+
+        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_now
+ 
+
+       
       else
         format.html { render :new }
         format.json { render json: @postmod.errors, status: :unprocessable_entity }
       end
+      
     end
   end
 
