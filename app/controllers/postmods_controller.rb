@@ -31,7 +31,7 @@ class PostmodsController < ApplicationController
         format.html { redirect_to @postmod, notice: 'Post modification was successfully created.' }
         format.json { render :show, status: :created, location: @postmod }
 
-        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_now
+        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
  
 
        
