@@ -212,6 +212,9 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sendgrid-actionmailer (3.1.0)
+      mail (~> 2.7)
+      sendgrid-ruby (~> 6.0)
     sendgrid-ruby (6.1.4)
       ruby_http_client (~> 3.4)
     spring (2.1.0)
@@ -273,6 +276,7 @@ DEPENDENCIES
   rails_admin
   sass-rails (>= 6)
   selenium-webdriver
+  sendgrid-actionmailer
   sendgrid-ruby
   spring
   spring-watcher-listen (~> 2.0.0)

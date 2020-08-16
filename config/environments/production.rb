@@ -16,6 +16,22 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  user_name: ENV['SENDGRID_USERNAME'],
+  password: ENV['SENDGRID_PASSWORD'],
+  domain: ENV['DOMAIN_NAME'],
+  address: 'smtp.sendgrid.net',
+  port: 587,
+  authentication: :plain,
+  enable_starttls_auto: true
+}
+
+  config.action_mailer.delivery_method = :sendgrid_actionmailer
+  config.action_mailer.sendgrid_actionmailer_settings = {
+  api_key: ENV['SENDGRID_API_KEY'],
+  raise_delivery_errors: true
+}
+
   config.action_mailer.default_url_options = { host: "http://customsapplication.herokuapp.com" }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
