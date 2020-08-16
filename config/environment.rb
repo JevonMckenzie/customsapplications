@@ -11,7 +11,7 @@ Rails.application.initialize!
 #  authentication: :plain,
 #  user_name:      ENV['#SENDGRID_USERNAME'],
 #  password:       ENV['SENDGRID_API_KEY']
-}
+#}
 
 
 
