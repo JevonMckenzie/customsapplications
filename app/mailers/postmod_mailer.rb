@@ -1,6 +1,6 @@
 class PostmodMailer < ApplicationMailer
 
-  default from: 'notifications@example.com'
+  #default from: 'notifications@example.com'
 
   def welcome_email
     @postmod = params[:postmod]

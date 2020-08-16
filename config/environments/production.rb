@@ -26,17 +26,26 @@ Rails.application.configure do
  # enable_starttls_auto: true
 #}
 
-config.action_mailer.smtp_settings = {
-  :user_name => ENV['SENDGRID_USERNAME'],
-  :password => ENV['SENDGRID_PASSWORD'],
-  :domain => 'herokuapp.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
- }
+#config.action_mailer.smtp_settings = {
+#  :user_name => ENV['SENDGRID_USERNAME'],
+#  :password => ENV['SENDGRID_PASSWORD'],
+#  :domain => 'herokuapp.com',
+#  :address => 'smtp.sendgrid.net',
+#  :port => 587,
+#  :authentication => :plain,
+#  :enable_starttls_auto => true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'customsapplication.herokuapp.com', :protocol => 'http' }
+  host = 'herokuapp.com' #replace with your own url
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.smtp_settings = {
+  port: 587,
+  address: 'smtp.gmail.com',
+  user_name: ENV['SMTP_USER_NAME'],
+  password: ENV['SMTP_PASSWORD'],
+  authentication: :plain,
+  enable_starttls_auto: true
+}
+#  config.action_mailer.default_url_options = { :host => 'customsapplication.herokuapp.com', :protocol => 'http' }
 #  config.action_mailer.delivery_method = :sendgrid_actionmailer
 #  config.action_mailer.sendgrid_actionmailer_settings = {
 #  raise_delivery_errors: true
