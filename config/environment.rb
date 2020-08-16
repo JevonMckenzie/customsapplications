@@ -2,7 +2,7 @@
 require_relative 'application'
 
 # Initialize the Rails application.
-
+Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   domain: 'customsapplications.herokuapp.com',
@@ -15,4 +15,3 @@ ActionMailer::Base.smtp_settings = {
 
 
 
-Rails.application.initialize!
