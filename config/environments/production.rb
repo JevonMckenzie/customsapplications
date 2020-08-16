@@ -26,13 +26,12 @@ Rails.application.configure do
   enable_starttls_auto: true
 }
 
-  config.action_mailer.delivery_method = :sendgrid_actionmailer
-  config.action_mailer.sendgrid_actionmailer_settings = {
-  api_key: ENV['SENDGRID_API_KEY'],
-  raise_delivery_errors: true
-}
+#  config.action_mailer.delivery_method = :sendgrid_actionmailer
+#  config.action_mailer.sendgrid_actionmailer_settings = {
+#  raise_delivery_errors: true
+#}
 
-  config.action_mailer.default_url_options = { host: "http://customsapplication.herokuapp.com" }
+# config.action_mailer.default_url_options = { host: "http://customsapplication.herokuapp.com" }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
