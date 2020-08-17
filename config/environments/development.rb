@@ -13,17 +13,17 @@ Rails.application.configure do
 #config.action_mailer.perform_deliveries = true
 #config.action_mailer.raise_delivery_errors = true
 
-ActionMailer::Base.smtp_settings = {
-   :address => 'smtp.sendgrid.net',
-   :port => '587',
-   :authentication => :plain,
-   :user_name => Rails.application.credentials[:sendgrid][:user_name],
-   :password => Rails.application.credentials[:sendgrid][:password],
-   :domain => 'heroku.com',
-   :enable_starttls_auto => true
- }
-  config.action_mailer.delivery_method = :test
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+##ActionMailer::Base.smtp_settings = {
+##   :address => 'smtp.sendgrid.net',
+##   :port => '587',
+##   :authentication => :plain,
+##   :user_name => Rails.application.credentials[:sendgrid][:username],
+##   :password => Rails.application.credentials[:sendgrid][:password],
+##   :domain => 'heroku.com',
+##   :enable_starttls_auto => true
+ ##}
+ # config.action_mailer.delivery_method = :test
+ # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 #
   # Show full error reports.

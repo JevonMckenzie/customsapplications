@@ -30,12 +30,7 @@ class PostmodsController < ApplicationController
       if @postmod.save
         PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
         format.html { redirect_to @postmod, notice: 'Post modification was successfully created.' }
-        format.json { render :show, status: :created, location: @postmod }
-
-        
- 
-
-       
+        format.json { render :show, status: :created, location: @postmod }       
       else
         format.html { render :new }
         format.json { render json: @postmod.errors, status: :unprocessable_entity }
