@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_014352) do
+ActiveRecord::Schema.define(version: 2020_08_18_165216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,10 @@ ActiveRecord::Schema.define(version: 2020_08_11_014352) do
     t.string "officecode"
     t.string "otherexcert"
     t.integer "amendfeerecgm"
+    t.string "pdfile_file_name"
+    t.string "pdfile_content_type"
+    t.integer "pdfile_file_size"
+    t.datetime "pdfile_updated_at"
     t.index ["user_id"], name: "index_postmods_on_user_id"
   end
 

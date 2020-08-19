@@ -29,7 +29,10 @@ class PostmodsController < ApplicationController
     respond_to do |format|
       if @postmod.save
         PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
-        format.html { redirect_to @postmod, notice: 'Post modification was successfully created.' }
+
+        format.html { redirect_to @postmod, notice: 'File successfully uploaded.' }
+        @item.save_attachments(item_params) if params[:postmod][:document_data]
+        
         format.json { render :show, status: :created, location: @postmod }       
       else
         format.html { render :new }
@@ -71,6 +74,6 @@ class PostmodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def postmod_params
-      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :addinfo)
+      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :pdfile, :addinfo, :document_data => [])
     end
 end
