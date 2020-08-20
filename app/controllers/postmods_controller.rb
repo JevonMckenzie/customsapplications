@@ -31,7 +31,7 @@ class PostmodsController < ApplicationController
         PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
 
         format.html { redirect_to @postmod, notice: 'File successfully uploaded.' }
-        @item.save_attachments(item_params) if params[:postmod][:postmod_data]
+        @postmod.save_attachments(postmod_params) if params[:postmod][:postmod_data]
         
         format.json { render :show, status: :created, location: @postmod }       
       else
