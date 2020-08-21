@@ -1,6 +1,6 @@
 class Postmod < ApplicationRecord
   belongs_to :user
-  has_attached_file :pdfile_file_name
+  has_attached_file :pdfile
   #validates_attachment :pdfile, :content_type => {:content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
   
   validates :amendfeerecgm, :presence => true, :if => :exporter? 
