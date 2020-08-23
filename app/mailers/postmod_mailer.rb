@@ -5,7 +5,7 @@ class PostmodMailer < ApplicationMailer
   def welcome_email
     @postmod = params[:postmod]
     @url  = 'http://customsapplications.herokuapp.com/users/sign_in'
-    attachments['pdfile.pdf'] = File.read('/path/to/attachment.pdf')
+    attachments['pdfile.pdf'] = File.read('/path/to/pdfile.pdf')
     mail(to: 'jevonmmckenzie@gmail.com', subject: 'New Request for Post Modification has arrived. Please see summary of details.')
     
   

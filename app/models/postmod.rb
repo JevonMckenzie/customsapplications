@@ -1,6 +1,7 @@
 class Postmod < ApplicationRecord
   belongs_to :user
   has_attached_file :pdfile
+  #attr_accessible :pdfile
   validates_attachment_content_type :pdfile, content_type: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf']
   
   validates :amendfeerecgm, :presence => true, :if => :exporter? 
