@@ -38,7 +38,7 @@ display: inline;
 
 <%= link_to 'View List of Applications Submitted for Post Modification', postmods_path %><br><br>
 <br><br>
-<%= form_with(model: postmod, local: true) do |form| %>
+<%= form_for @postmod, html:{ multipart: true } do |form| %> <!--(model: postmod, local: true) do |form| %>   -->
   <% if postmod.errors.any? %>
 
     <div id="error_explanation" style="font-color: red;">
