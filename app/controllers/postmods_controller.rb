@@ -26,22 +26,27 @@ class PostmodsController < ApplicationController
   def create
     @postmod = Postmod.new(postmod_params)
     @postmod.user = current_user
-    respond_to do |format|
+   # respond_to do |format|
       if @postmod.save
-        PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
-
-        format.html { redirect_to @postmod, notice: 'Post Modification Request has been submitted.' }
-        @postmod.save_attachments(postmod_params) if params[:postmod][:postmod_data]
-        format.html { redirect_to @postmod, notice: 'File successfully uploaded.' }
+       # PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
+         PostmodMailer.welcome_email(@postmod).deliver
+        redirect_back(fallback_location: root_path)
+     
+       # format.html { redirect_to @postmod, notice: 'Post Modification Request has been submitted.' }
+      #  @postmod.save_attachments(postmod_params) if params[:postmod][:postmod_data]
+       # format.html { redirect_to @postmod, notice: 'File successfully uploaded.' }
         
-        format.json { render :show, status: :created, location: @postmod }       
+        #format.json { render :show, status: :created, location: @postmod }       
       else
-        format.html { render :new }
+        #format.html { render :new }
         format.json { render json: @postmod.errors, status: :unprocessable_entity }
+
+         flash[:error] = @postmod.errors.full_messages
+      redirect_back(fallback_location: root_path)
       end
       
     end
-  end
+
 
   # PATCH/PUT /postmods/1
   # PATCH/PUT /postmods/1.json
