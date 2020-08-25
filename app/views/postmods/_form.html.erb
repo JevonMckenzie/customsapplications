@@ -13,7 +13,7 @@ table, th, td, tr {
  border-collapse: collapse;
 }
 label{
-display: inline;
+display: ;
 }
 
 .field_with_errors input{
@@ -57,15 +57,15 @@ display: inline;
   <h2> Section I </h2>
   <table align="" width=100%>
     <tr><td align="left" width="33.3%">
-          <div class="field" style="display: inline;">
-            <%= form.label :Entry_number %><%= form.text_field :entrynum%>
+          <div class="field" style="">
+            <%= form.label :Entry_number %><br><%= form.text_field :entrynum%>
               
           </div> 
          </td>
 
          <td align="left" width="33.3%"> 
-          <div class="field" style="display: inline;">
-            <%= form.label :Office_code %>  <%= form.text_field :officecode %>
+          <div class="field" style="">
+            <%= form.label :Office_code %> <br> <%= form.text_field :officecode %>
                
           </div> 
          </td>
@@ -194,7 +194,7 @@ display: inline;
   </div>
 </td></tr><tr><td width="33.3%" align="left">   
   <div class="field" style="display: inline;">
-    <%= form.label :other%>
+    <%= form.label :other%><br>
     <%= form.text_area :otherexcert %>
   </div>
   </td></tr>
@@ -343,7 +343,7 @@ display: inline;
  <table width="100%">
   <tr><td width="33.3%" align="left"><h3><u>Attachment of Supporting Documents</u>:</h3></td> 
     <td width="33.3%" align="left">
-    <div class="field" style="display: inline;">
+    <div class="field" style="">
      <%= form.label :ammendment_fee_receipt_for_attachment_of_supporting_document %> <%= form.number_field :amendfeerec %>
        
     </div>
@@ -405,13 +405,13 @@ display: inline;
   </div>
 </td></tr><tr><td width="33.3%" align="left">
  <div class="field" style="display: inline;">
-    <%= form.label :Other %><%= form.text_area :otherasdbox %>
+    <%= form.label :Other %><br><%= form.text_area :otherasdbox %>
     
   </div>
 </td>
 <td width="33.3%" align="left">
   <div class="field" style="display: inline;">
-   <%= form.label :reason %> <%= form.text_area :reason %>
+   <%= form.label :reason %> <br><%= form.text_area :reason %>
     
   </div></td>
   <td width="33.3%" align="left">
@@ -424,13 +424,11 @@ display: inline;
 <hr>
 <h2>Section III</h2>
 <h2 align="center"> For Official Use Only </h2>
-<table>
+
+
+<table width="100%">
   <tr>
  <td width="33.3%" align="left">
- 
-
-
-
   <div class="field" style="display: inline;">
     <%= form.check_box :approved %><%= form.label :Approved %>
     
@@ -444,18 +442,50 @@ display: inline;
 </td>
   <td width="33.3%" align="left">
   <div class="field" style="display: inline;">
-    <%= form.check_box :addinfo %><%= form.label :Additional_Information %>
+    <%= form.check_box :addinfo %><%= form.label :Add_Info %>
+    
+  </div>
+</td></tr>
+</table><table width="100%">
+  <tr>
+ <td width="33.3%" align="left">
+ 
+  <div class="field" style=";">
+    <%= form.label :reason_denial_or_add_info %><br><%= form.text_area :adminreason %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style=";">
+    <%= form.label :ammendment_cost_to_be_paid %><br><%= form.number_field :ammendcost %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style=";">
+    
+    
+  </div>
+</td></tr>
+</table>
+<table><tr>
+  <td width="50%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :recorded %><%= form.label :record_postmodification %>
     
   </div>
 </td></tr>
 
-<tr><td>
-
+</table>
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
-</td></tr>
-</table>
+
+
+
+
+
 <% end %>
 </div>
 </html>
