@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_155143) do
+ActiveRecord::Schema.define(version: 2020_08_25_032452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adminsecs", force: :cascade do |t|
+    t.boolean "denied"
+    t.boolean "approved"
+    t.boolean "addinfo"
+    t.bigint "postmod_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["postmod_id"], name: "index_adminsecs_on_postmod_id"
+  end
 
   create_table "postmods", force: :cascade do |t|
     t.boolean "mof"
@@ -127,6 +137,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_155143) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "adminsecs", "postmods"
   add_foreign_key "postmods", "users"
   add_foreign_key "refunds", "users"
 end

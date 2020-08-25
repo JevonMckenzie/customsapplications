@@ -2,7 +2,7 @@ class Postmod < ApplicationRecord
   belongs_to :user
   has_attached_file :pdfile
   #attr_accessible :pdfile
-  validates_attachment_content_type :pdfile, content_type: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf']
+  validates_attachment_content_type :pdfile, content_type: ['application/pdf'], :allow_nil => true
   
   validates :amendfeerecgm, :presence => true, :if => :exporter? 
   validates :amendfeerecgm, :presence => true, :if => :importer?
@@ -19,7 +19,7 @@ class Postmod < ApplicationRecord
   validates :amendfeerecgm, :presence => true, :if => :airbill?
   validates :amendfeerecgm, :presence => true, :if => :origin?
   validates :amendfeerecgm, :presence => true, :if => :gmass?
-  validates :amendfeerecgm, :presence => true, :if => :currency?
+  validates :amendfeerecgm, :presence => true, :if => :currency?  
   validates :amendfeerecgm, :presence => true, :if => :iquantity?
   validates :amendfeerecgm, :presence => true, :if => :procexproccode?
   validates :amendfeerecgm, :presence => true, :if => :itemvalue?
