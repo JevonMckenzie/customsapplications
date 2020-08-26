@@ -11,7 +11,7 @@ gem 'sendgrid-actionmailer'
 gem 'aws-sdk', '~> 2.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'cancan'
+gem 'cancancan'
 gem 'devise'
 gem 'rails_admin'
 gem 'pg'
