@@ -26,26 +26,27 @@ class PostmodsController < ApplicationController
   def create
     @postmod = Postmod.new(postmod_params)
     @postmod.user = current_user
-   # respond_to do |format|
+    respond_to do |format|
       if @postmod.save
-       # PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
+       ######### PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
          PostmodMailer.welcome_email(@postmod).deliver
-        redirect_back(fallback_location: root_path)
+        #redirect_back(fallback_location: root_path)
      
-       # format.html { redirect_to @postmod, notice: 'Post Modification Request has been submitted.' }
-      #  @postmod.save_attachments(postmod_params) if params[:postmod][:postmod_data]
+        format.html { redirect_to @postmod, notice: 'Post Modification Request has been submitted.' }
+     ####### #  @postmod.save_attachments(postmod_params) if params[:postmod][:postmod_data]
        # format.html { redirect_to @postmod, notice: 'File successfully uploaded.' }
         
         #format.json { render :show, status: :created, location: @postmod }       
       else
-        #format.html { render :new }
+        format.html { render :new }
         format.json { render json: @postmod.errors, status: :unprocessable_entity }
 
          flash[:error] = @postmod.errors.full_messages
-      redirect_back(fallback_location: root_path)
+      #redirect_back(fallback_location: root_path)
       end
       
     end
+  end
 
 
   # PATCH/PUT /postmods/1
@@ -80,6 +81,6 @@ class PostmodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def postmod_params
-      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :pdfile, :addinfo, :adminreason, :ammendcost, :recorded)
+      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :pdfile, :addinfo, :otherexcert, :adminreason, :ammendcost, :recorded)
     end
 end
