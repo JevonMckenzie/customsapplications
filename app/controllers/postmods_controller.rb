@@ -54,7 +54,7 @@ class PostmodsController < ApplicationController
   def update
     respond_to do |format|
       if @postmod.update(postmod_params)
-        PostmodMailer.edit_email(@postmod).deliver
+        PostmodMailer.welcome_email(@postmod).deliver
         format.html { redirect_to @postmod, notice: 'Postmod was successfully updated.' }
         format.json { render :show, status: :ok, location: @postmod }
       else
