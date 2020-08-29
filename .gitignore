@@ -7,6 +7,15 @@
 # Ignore bundler config.
 /.bundle
 
+
+
+SENDGRID_USERNAME=apikey
+SENDGRID_PASSWORD=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
+SENDGRID_API_KEY=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
+DOMAIN_NAME=herokuapp.com
+SMTP_USER_NAME=jevonmmckenzie@gmail.com
+SMTP_PASSWORD=
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
