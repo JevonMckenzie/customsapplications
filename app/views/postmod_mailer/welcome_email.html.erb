@@ -4,19 +4,25 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br> 
+    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br>
+
     <p>
       <h5>Entry Number: <%= @postmod.entrynum %>
-        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-      Administrator: <%= @postmod.username %>.<br>
-      <% else %>
-      Broker: <% @postmod.username %>
-       <% end %>
+
+              <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+                  Administrator: <%= @postmod.username %>.<br>
+              <% else %>
+                  Broker: <% @postmod.username %><br>
+              <% end %>
+
     </h5>
     </p>
+
     <p>
       To login to the site for approval/denial, just follow this link: <%= @url %>.
     </p>
+
     <p>Thanks for joining and have a great day!</p>
+    
   </body>
 </html>
