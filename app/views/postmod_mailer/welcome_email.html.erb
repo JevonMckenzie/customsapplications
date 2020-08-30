@@ -4,74 +4,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br>
-
+    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br> 
     <p>
+      <h5>Entry Number: <%= @postmod.entrynum %>
+   
+      The person issuing the notification is: <%= @postmod.username %>.<br>
+     
 
-      <h5>
-
-              <% if @postmod.entrynum? %>
-                  Entry Number: <% @postmod.entrynum %>
-              <% end %>
-
-               <% if @postmod.officecode? %>
-                  Office Code: <% @postmod.officecode %>
-              <% end %>
-
-               <% if @postmod.mof? %>
-                  Ministry of Finance: <% @postmod.mof %>
-              <% end %>
-
-               <% if @postmod.beltrade? %>
-                  Beltrade: <% @postmod.beltrade %>
-              <% end %>
-
-               <% if @postmod.motourism? %>
-                  Ministry of Tourism: <% @postmod.motourism %>
-              <% end %>
-
-               <% if @postmod.mohealth? %>
-                  Ministry of Health: <% @postmod.mohealth %>
-              <% end %>
-
-               <% if @postmod.moeducation? %>
-                  Ministry of Education: <% @postmod.moeducation %>
-              <% end %>
-
-               <% if @postmod.mosecurity? %>
-                  Ministry of National Security: <% @postmod.mosecurity %>
-              <% end %>
-
-
-                <% if @postmod.dciagency? %>
-                  Diplomatic Consulate International Agency: <% @postmod.dciagency %>
-              <% end %>
-
-                 <% if @postmod.bosie? %>
-                  Breuro of Standards Import/Export: <% @postmod.bosie %>
-              <% end %>
-
-                 <% if @postmod.other? %>
-                  Other: <% @postmod.other %>
-              <% end %>
-                 <% if @postmod.government? %>
-                  Government: <% @postmod.government %>
-              <% end %>
-
-                 <% if @postmod.nagreement? %>
-                  National Agreement: <% @postmod.nagreement %>
-              <% end %>
-
-
-              
     </h5>
     </p>
-
     <p>
       To login to the site for approval/denial, just follow this link: <%= @url %>.
     </p>
-
     <p>Thanks for joining and have a great day!</p>
-
   </body>
 </html>
