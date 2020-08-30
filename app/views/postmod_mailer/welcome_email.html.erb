@@ -4,25 +4,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br> 
     <p>
-      <h5>>
+      <h5>Entry Number: <%= @postmod.entrynum %>
         <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-        <h3>An Administrator has edited a Request for Post Modification. Please see summary of details.</h3> <br>
-         Administrator: <%= @postmod.current_user %>.<br>
-         Entry Number: <%= @postmod.entrynum %><br>
-         Office Code: <%= @postmod.officecode %> <br>
-         Approve Status: <%= @postmod.approved %> <br>
-         Recorded Status: <% @postmod.recorded %><br>
+      Administrator: <%= @postmod.username %>.<br>
       <% else %>
-         <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br>
-            Broker: <%= @postmod.current_user %>.<br>
-            Entry Number: <%= @postmod.entrynum %><br>
-            Office Code: <%= @postmod.officecode %> <br>
-            Approve Status: <%= @postmod.approved %> <br>
-            Recorded Status: <% @postmod.recorded %><br>
-      <%end%>
-
-
+      Broker: <% @postmod.username %>
+       <% end %>
     </h5>
     </p>
     <p>
