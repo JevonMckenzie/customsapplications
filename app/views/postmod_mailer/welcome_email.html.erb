@@ -1,21 +1,16 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br> 
+    <h1>Notification - Customs Application for Post Modification , Entry Number: <%= @postmod.entrynum %></h1>
     <p>
-      <h5>Entry Number: <%= @postmod.entrynum %>
-      Request ID: <%= @postmod.id %>
-      Status of Approved: <%= @postmod.approved %>.<br>
-      Status of Recorded: <%= @postmod.recorded %>
-     
-
-    </h5>
+            your username is:<br>
     </p>
     <p>
-      To login to the site for approval/denial, just follow this link: <%= @url %>.
+      To login to the site, just follow this link: <%= @url %>.
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
