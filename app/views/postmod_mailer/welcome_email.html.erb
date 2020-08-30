@@ -7,14 +7,66 @@
     <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br>
 
     <p>
-      <h5>Entry Number: <%= @postmod.entrynum %>
 
-              <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-                  Administrator: <%= @postmod.username %>.<br>
-              <% else %>
-                  Broker: <% @postmod.username %><br>
+      <h5>
+
+              <% if @postmod.entrynum? %>
+                  Entry Number: <% @postmod.entrynum %>
               <% end %>
 
+               <% if @postmod.officecode? %>
+                  Office Code: <% @postmod.officecode %>
+              <% end %>
+
+               <% if @postmod.mof? %>
+                  Ministry of Finance: <% @postmod.mof %>
+              <% end %>
+
+               <% if @postmod.beltrade? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+               <% if @postmod.motourism? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+               <% if @postmod.mohealth? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+               <% if @postmod.moeducation? %>
+                  Entry Number: <% postmod.entrynum %>
+              <% end %>
+
+               <% if @postmod.mosecurity? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+                 <% if @postmod.mosecurity? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+                 <% if @postmod.dciagency? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+                 <% if @postmod.bosie? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+                 <% if @postmod.other? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+                 <% if @postmod.government? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+                 <% if @postmod.nagreement? %>
+                  Entry Number: <% @postmod.entrynum %>
+              <% end %>
+
+
+              
     </h5>
     </p>
 
@@ -23,6 +75,6 @@
     </p>
 
     <p>Thanks for joining and have a great day!</p>
-    
+
   </body>
 </html>
