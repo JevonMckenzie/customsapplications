@@ -5,12 +5,59 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Notification - Customs Application for Post Modification </h1>
-    <p>    your username is: <%=  @postmod.user_id %><br>
-           your username is: <%=  @postmod.entrynum %><br>
-           your username is: <%=  @postmod.officecode %><br>
-           your username is: <%=  @postmod.mof %><br>
-           your username is: <%=  @postmod.beltrade %><br>
+    <h1>Notification - Customs & Excise Application for Post Modification </h1>
+    <p>    
+              <% if @postmod.entrynum? %>
+                  Entry Number: <%= @postmod.entrynum %>
+              <% end %>
+
+               <% if @postmod.officecode? %>
+                  Office Code: <%= @postmod.officecode %>
+              <% end %>
+
+               <% if @postmod.mof? %>
+                  Ministry of Finance: <% @postmod.mof %>
+              <% end %>
+
+               <% if @postmod.beltrade? %>
+                  Beltrade: <%= @postmod.beltrade %>
+              <% end %>
+
+               <% if @postmod.motourism? %>
+                  Ministry of Tourism: <%= @postmod.motourism %>
+              <% end %>
+
+               <% if @postmod.mohealth? %>
+                  Ministry of Health: <%= @postmod.mohealth %>
+              <% end %>
+
+               <% if @postmod.moeducation? %>
+                  Ministry of Education: <%= @postmod.moeducation %>
+              <% end %>
+
+               <% if @postmod.mosecurity? %>
+                  Ministry of National Security: <%= @postmod.mosecurity %>
+              <% end %>
+
+
+                <% if @postmod.dciagency? %>
+                  Diplomatic Consulate International Agency: <%= @postmod.dciagency %>
+              <% end %>
+
+                 <% if @postmod.bosie? %>
+                  Breuro of Standards Import/Export: <%= @postmod.bosie %>
+              <% end %>
+
+                 <% if @postmod.other? %>
+                  Other: <%= @postmod.other %>
+              <% end %>
+                 <% if @postmod.government? %>
+                  Government: <%= @postmod.government %>
+              <% end %>
+
+                 <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %>
+              <% end %>
     </p>
     <p>
       To login to the site, just follow this link: .
