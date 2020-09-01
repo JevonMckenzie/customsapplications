@@ -8,8 +8,8 @@
   <body class="container">
 
 
-<h1 align="center">Customs Electronic Applications</h1>
-
+<h1 align="center">Customs Electronic Applications</h1><br><br>
+<%= link_to 'View Information About This Electronic Form', pages_path %><br><br>
 <% if current_user %>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %><br><br>
 <a href="http://customsapplications.herokuapp.com/admin">Administration Panel</a>
