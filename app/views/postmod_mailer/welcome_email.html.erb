@@ -8,7 +8,7 @@
     <h1>Notification - Customs & Excise Application for Post Modification </h1>
     <p>    
 
-        <% if @postmod.user_id < 7 %>
+        <% if @postmod.user_id > 7 %>
                 <h2>This Notification is from a Broker!</h2>
             <% else %>
                 <h2>This Notification is from an Administrator!</h2>
