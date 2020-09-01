@@ -15,6 +15,9 @@
                   Office Code: <%= @postmod.officecode %><br>
               <% end %>
 
+           <h3>   Approved Status: <%= @postmod.approved %></h3><br>
+            <h3>  Recorded Status: <%= @postmod.recorded %></h3><br>
+
                <% if @postmod.mof? %>
                   Ministry of Finance: <%= @postmod.mof %><br>
               <% end %>
@@ -182,9 +185,9 @@
                   Reason: <%= @postmod.reason %><br>
               <% end %>
 
-               <% if @postmod.approved? %>
-                  Approved Status: <%= @postmod.approved %><br>
-              <% end %>
+               
+                  
+              
 
                <% if @postmod.addinfo? %>
                   Additional Information: <%= @postmod.addinfo %><br>
@@ -194,9 +197,9 @@
                   Reason For Admin Decision: <%= @postmod.adminreason %><br>
               <% end %>
 
-               <% if @postmod.recorded? %>
-                  Recorded Status: <%= @postmod.recorded %><br>
-              <% end %>
+               
+               
+              
 
               
     </p>
