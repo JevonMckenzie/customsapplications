@@ -6,9 +6,10 @@ class Postmod < ApplicationRecord
   
 
   validates :amendfeerecgm, :presence => true, :if => :recorded?
-
   validates :amendfeerec, :presence => true, :if => :recorded?
-
+  
+  validates  :approved, :presence => true, :if => :amendfeerec?
+  validates  :approved, :presence => true, :if => :amendfeerecgm?
 
   validates :reason, :presence => true, :if => :transletter?
   validates :reason, :presence => true, :if => :invoice?
