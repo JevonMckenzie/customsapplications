@@ -11,7 +11,7 @@ class Postmod < ApplicationRecord
   validates  :approved, :presence => true, :if => :amendfeerec?
   validates  :approved, :presence => true, :if => :amendfeerecgm?
 
-  validates  :approved, :presence => true, :if => :ammencost?
+  validates  :approved, :presence => true, :if => :ammendcost?
 
   validates  :adminreason, :presence => true, :if => :denied?  
   validates  :adminreason, :presence => true, :if => :addinfo?  
