@@ -5,10 +5,10 @@ class Postmod < ApplicationRecord
   validates_attachment_content_type :pdfile, content_type: ['application/pdf'], :allow_nil => true
   
 
-  validates :amendfeerecgm, :presence => true, :if => :recorded?
-  validates :amendfeerec, :presence => true, :if => :recorded?
-  
 
+  
+  validates  :approved, :presence => true, :if => :amendfeerec?
+  validates  :approved, :presence => true, :if => :amendfeerecgm?
 
   validates  :approved, :presence => true, :if => :ammendcost?
 
