@@ -1,6 +1,6 @@
 class PostmodsController < ApplicationController
   before_action :set_postmod, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user! #, except: [:show, :index]
   # GET /postmods
   # GET /postmods.json
   def index
