@@ -48,7 +48,10 @@ label{
 <p id="notice"><%= notice %></p>
 
 
-
+<table style="border: none;" width="100%"><tr><td width="">
+    <%= form.label :Broker_Email %><br>
+    <%= form.text_field :brokeremail, value:@postmod.brokeremail, :disabled=>true %>
+    </td></tr></table>
 
 
 
@@ -62,7 +65,7 @@ label{
     <%= form.text_field :entrynum, value:@postmod.entrynum, :disabled=>true %>
     </td><td width="33.3%">
     <%= form.label :Office_Code %><br>
-    <%= form.number_field :officecode, value:@postmod.officecode, :disabled=>true %>
+    <%= form.text_field :officecode, value:@postmod.officecode, :disabled=>true %>
 </td><td width="33.3%">
     
 </td></tr></table>
@@ -447,7 +450,11 @@ label{
     
   </div>
 </td>
-
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.label :attach_file %> <%= form.file_field :pdfile, :disabled=>true %>
+    
+  </div></td> 
 </tr> 
 </table>
 <hr>

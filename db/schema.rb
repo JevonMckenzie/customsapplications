@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_140534) do
+ActiveRecord::Schema.define(version: 2020_09_25_162230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_140534) do
     t.boolean "recorded"
     t.string "adminreason"
     t.decimal "ammendcost"
+    t.string "brokeremail"
     t.index ["user_id"], name: "index_postmods_on_user_id"
   end
 
