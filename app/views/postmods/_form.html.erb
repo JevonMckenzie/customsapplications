@@ -51,15 +51,16 @@ display: ;
       </ul>
     </div>
   <% end %>
-
-
- <div class="field" style="">
-            <%= form.label :Brokers_Email %><br><%= form.text_field :entrynum, value:@postmod.user.email  :disabled=>true%>
+<!--<table><tr><td>
+<div class="field" style="">
+          <!--  <%= form.label :Brokers_Email %><br><%= form.text_field :entrynum, value:@postmod.user_id %>    -->
               
-          </div> 
+          <!--  </div> </td></tr>
+ </table>  -->
 <% if current_user.superadmin_role? || current_user.supervisor_role? %>
   <h2> Section I </h2>
   <table align="" width=100%>
+
     <tr><td align="left" width="33.3%">
           <div class="field" style="">
             <%= form.label :Entry_number %><br><%= form.text_field :entrynum, :disabled=>true%>
