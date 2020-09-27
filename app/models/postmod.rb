@@ -19,7 +19,7 @@ class Postmod < ApplicationRecord
   validates :reason, :presence => true, :if => :invoice?
   validates :reason, :presence => true, :if => :vvslip?
   validates :reason, :presence => true, :if => :sscertificate?
-  validates :reason, :presence => true, :if => :otherasdbox?
+  #validates :reason, :presence => true, :if => :otherasdbox?
   validates :reason, :presence => true, :if => :popayment?
   validates :reason, :presence => true, :if => :certorigin?
   validates :reason, :presence => true, :if => :worksheet?
