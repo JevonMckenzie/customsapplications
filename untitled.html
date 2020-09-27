@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Notification - Customs & Excise Application for Post Modification </h1>
+    <p>    
+              <% if @postmod.entrynum? %>
+                  Entry Number: <%= @postmod.entrynum %><br>
+              <% end %>
+
+               <% if @postmod.officecode? %>
+                  Office Code: <%= @postmod.officecode %><br>
+              <% end %>
+
+               <% if @postmod.mof? %>
+                  Ministry of Finance: <%= @postmod.mof %><br>
+              <% end %>
+
+               <% if @postmod.beltrade? %>
+                  Beltrade: <%= @postmod.beltrade %><br>
+              <% end %>
+
+               <% if @postmod.motourism? %>
+                  Ministry of Tourism: <%= @postmod.motourism %><br>
+              <% end %>
+
+               <% if @postmod.mohealth? %>
+                  Ministry of Health: <%= @postmod.mohealth %><br>
+              <% end %>
+
+               <% if @postmod.moeducation? %>
+                  Ministry of Education: <%= @postmod.moeducation %><br>
+              <% end %>
+
+               <% if @postmod.mosecurity? %>
+                  Ministry of National Security: <%= @postmod.mosecurity %><br>
+              <% end %>
+
+
+                <% if @postmod.dciagency? %>
+                  Diplomatic Consulate International Agency: <%= @postmod.dciagency %><br>
+              <% end %>
+
+                 <% if @postmod.bosie? %>
+                  Breuro of Standards Import/Export: <%= @postmod.bosie %><br>
+              <% end %>
+
+                 <% if @postmod.other? %>
+                  Other: <%= @postmod.other %><br>
+              <% end %>
+                 <% if @postmod.government? %>
+                  Government: <%= @postmod.government %><br>
+              <% end %>
+
+                 <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.doe? %>
+                  DOE: <%= @postmod.doe %><br>
+              <% end %>
+
+               <% if @postmod.cpharmacy? %>
+                  Chief Pharmacy: <%= @postmod.cpharmacy %><br>
+              <% end %>
+
+               <% if @postmod.townership? %>
+                  Transfer of Ownership: <%= @postmod.townership %><br>
+              <% end %>
+
+               <% if @postmod.centralbank? %>
+                  Central Bank: <%= @postmod.centralbank %><br>
+              <% end %>
+
+               <% if @postmod.exporter? %>
+                  Exporter: <%= @postmod.exporter %><br>
+              <% end %>
+
+               <% if @postmod.importer? %>
+                  Importer: <%= @postmod.importer %><br>
+              <% end %>
+
+               <% if @postmod.noitems %>
+                  Number of Items: <%= @postmod.noitems %><br>
+              <% end %>
+
+               <% if @postmod.nopackage? %>
+                  No Package: <%= @postmod.nopackage %><br>
+              <% end %>
+
+               <% if @postmod.vessel? %>
+                  Vessel: <%= @postmod.vessel%><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+
+               <% if @postmod.nagreement? %>
+                  National Agreement: <%= @postmod.nagreement %><br>
+              <% end %>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+
+              
+    </h5>
+    </p>
+
+    <p>
+      To login to the site for approval/denial, just follow this link: <%= @url %>.
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>New Request for Post Modification has arrived. Please see summary of details.</h3> <br> 
+    <p>
+      <h5>Entry Number: <%= @postmod.entrynum %>
+      Request ID: <%= @postmod.id %>
+      User: <%= @postmod.user_id %>
+      Status of Approved: <%= @postmod.approved %>.<br>
+      Status of Recorded: <%= @postmod.recorded %>
+     
+
+    </h5>
+    </p>
+    <p>
+      To login to the site for approval/denial, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
