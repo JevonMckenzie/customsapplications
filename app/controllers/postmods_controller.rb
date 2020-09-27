@@ -26,7 +26,7 @@ class PostmodsController < ApplicationController
   def create
     @postmod = Postmod.new(postmod_params)
     @postmod.user = current_user
-    brokeremail = @postmod.user.email
+    @postmod.brokeremail = @postmod.user.email
     respond_to do |format|
       if @postmod.save
        ######### PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
