@@ -26,7 +26,7 @@ class PostmodsController < ApplicationController
   def create
     @postmod = Postmod.new(postmod_params)
     @postmod.user = current_user
-    @postmod.signature = @postmod.user.email
+    @postmod.otherasdbox = @postmod.user.email
     respond_to do |format|
       if @postmod.save
        ######### PostmodMailer.with(postmod: @postmod).welcome_email.deliver_later
@@ -83,6 +83,6 @@ class PostmodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def postmod_params
-      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :signature, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :pdfile, :addinfo, :otherexcert, :adminreason, :ammendcost, :recorded, :brokeremail)
+      params.require(:postmod).permit(:officecode, :entrynum, :created_at, :updated_at, :mof, :beltrade, :motourism, :mohealth, :moeducation, :mosecurity, :dciagency, :bosie, :other, :government, :nagreement, :doe, :cpharmacy, :townership, :centralbank, :exporter, :importer, :noitems, :nopackage, :vessel, :fccontainernum, :location, :nmass, :tainvoice, :description, :commcode, :vinserial, :airbill, :origin, :gmass, :currency, :iquantity, :procexproccode, :itemvalue, :prevdocrefnum, :bolading, :amendfeerec, :amendfeerecgm, :transletter, :invoice, :vvslip, :sscertificate, :otherasd, :popayment, :certorigin, :worksheet, :overlandedcert, :othercertbox, :otherasdbox, :reason, :approved, :denied, :pdfile, :addinfo, :otherexcert, :adminreason, :ammendcost, :recorded, :brokeremail)
     end
 end
