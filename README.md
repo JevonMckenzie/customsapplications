@@ -17,7 +17,9 @@ If the status of the request is Approved and the Ammendment Fee Receipt is prese
 When recorded is selected the Request is not longer available to anyone. Same is true for when denied is selected.
 
 
-![Argon Dashboard](http://www.jevon-mckenzie.com/refund%20of%20duty.png)
+![Argon Dashboard](http://www.jevon-mckenzie.com/refund%20of%20duty.png) 
+![Argon Dashboard](http://www.jevon-mckenzie.com/post%20modification.png) 
+
 
 ## USER ACCOUNTS
 Temporary Email Account Receiving Emails
