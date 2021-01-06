@@ -1,6 +1,6 @@
 # [Customs Applications](http://customsapplications.herokuapp.com/)
 
-## Process Flow
+## Process Flow For Post Modification
 The Broker will be given a username and password. They will change their password after they login.
 The Broker will select the fields respective to thier request for postmodification and attach file if necessary.
 The Broker submits the request by clicking on the submit button.
